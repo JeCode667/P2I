@@ -1,0 +1,9 @@
+.chat-container {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  max-height: 40vh; /* Limite la hauteur */
+  width: 60%;
+  justify-self: center;
+  overflow-y: auto; /* Ajoute un défilement si nécessaire */
+}

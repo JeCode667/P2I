@@ -1,0 +1,25 @@
+.inputbar {
+  display: flex;
+  flex-direction: row;
+  background: white;
+  width: fit-content;
+  border-radius: 100px;
+  width: 65%;
+  min-height: 60px;
+  justify-content: space-around;
+  justify-self: center;
+}
+
+.inputbar.dark-mode {
+  background: #5d5d5d;
+}
+
+.textField {
+  width: 90%;
+  align-self: center;
+}
+
+.sendIcon {
+  rotate: -45deg;
+  align-self: center;
+}

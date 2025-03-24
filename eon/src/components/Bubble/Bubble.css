@@ -1,0 +1,24 @@
+.bubble {
+  margin: 5px;
+  max-width: 75%;
+  padding: 2px 5px;
+  border-radius: 15px;
+}
+
+.bubble.user {
+  background: #5ae4f3;
+  align-self: flex-end;
+}
+
+.bubble.model {
+  background: #6077ed;
+  align-self: flex-start;
+}
+
+.bubble.user.dark-mode {
+  background: #172044;
+}
+
+.bubble.model.dark-mode {
+  background: #133438;
+}

@@ -1,0 +1,16 @@
+.logo {
+  width: 350px;
+  height: 150px;
+  flex-shrink: 0;
+  justify-self: center;
+}
+
+.logo h1 {
+  color: #676700;
+  text-align: center;
+  font-family: "Jacques Francois Shadow", serif;
+  font-size: 128px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}

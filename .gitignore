@@ -136,3 +136,5 @@ dist
 .pnp.*
 
 .sln
+
+api/models/

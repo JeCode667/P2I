@@ -3,8 +3,21 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 3vh 3vh; /* Ajoute un padding de 10px en haut et en bas, 20px à gauche et à droite */
+  box-sizing: border-box; /* Assure que le padding est inclus dans la largeur totale */
 }
 
 .button:hover {
+  transform: scale(1.2); /* Agrandit légèrement l'icône au survol */
+}
+
+.button {
   cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 20px;
 }

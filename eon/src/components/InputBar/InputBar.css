@@ -22,4 +22,10 @@
 .sendIcon {
   rotate: -45deg;
   align-self: center;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.sendIcon:hover {
+  transform: scale(1.2); /* Agrandit légèrement l'icône au survol */
 }

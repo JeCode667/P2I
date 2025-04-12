@@ -1,8 +1,10 @@
 .logo {
-  width: 350px;
-  height: 150px;
-  flex-shrink: 0;
-  justify-self: center;
+  height: 120px;
+  transition: all 0.5s ease;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .logo h1 {

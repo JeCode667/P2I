@@ -1,8 +1,8 @@
 import { useState } from "react";
 
-const API_URL = "http://127.0.0.1:5000/chat/gpt2"; // Remplace par l'URL de ton API
+const API_URL = "http://127.0.0.1:5000/chat/"; // Remplace par l'URL de ton API
 
-export function useChatbot() {
+export function useChatbot(model = "gpt2") {
   const [input, setInput] = useState("");
   const [messages, setMessages] = useState([]);
 
@@ -10,11 +10,11 @@ export function useChatbot() {
     if (!input.trim()) return;
 
     const newMessages = [...messages, { text: input, sender: "user" }];
-    setMessages(newMessages);
+    setMessages([...newMessages, { text: " . . . ", sender: "bot" }]); // Ajoute les points de suspension
     setInput("");
 
     try {
-      const response = await fetch(API_URL, {
+      const response = await fetch(API_URL + model, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ message: input }),
@@ -26,13 +26,15 @@ export function useChatbot() {
 
       const data = await response.json();
 
-      // Vérifie si data.message existe avant de l'ajouter
+      // Remplace les points de suspension par la réponse du serveur
       setMessages([
         ...newMessages,
         { text: data.response || "❌ Réponse invalide", sender: "bot" },
       ]);
     } catch (error) {
       console.error("Erreur API :", error);
+
+      // Remplace les points de suspension par un message d'erreur
       setMessages([
         ...newMessages,
         { text: "❌ Erreur serveur", sender: "bot" },

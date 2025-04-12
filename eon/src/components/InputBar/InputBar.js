@@ -13,7 +13,7 @@ export default function InputBar({ darkMode, setInput, input, sendMessage }) {
         maxRows={10}
         placeholder="Posez votre question"
         InputProps={{
-          disableUnderline: true, // Supprime le soulignement
+          disableUnderline: true,
           style: { color: darkMode ? "white" : "black" },
         }}
         value={input}

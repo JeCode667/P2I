@@ -1,6 +1,9 @@
 import { useState, useEffect } from "react";
 
-const API_URL = "http://127.0.0.1:5000/chat/";
+const API_URL =
+  process.env.NODE_ENV === "development"
+    ? "http://127.0.0.1:5000/chat/"
+    : "https://eon-api-regz.onrender.com/chat/";
 
 export function useChatbot(model = "gpt2") {
   const [input, setInput] = useState("");

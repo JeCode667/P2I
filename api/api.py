@@ -1,6 +1,6 @@
 from flask import Flask, request, jsonify
 from flask_cors import CORS  # Permet les requêtes cross-origin
-from transformers import AutoModelForCausalLM, AutoTokenizer
+from transformers import GPT2LMHeadModel, AutoTokenizer
 import torch
 import json
 import faiss
@@ -38,7 +38,7 @@ else:
 
 
 # Charger les modèles
-tokenizer_trained = AutoTokenizer.from_pretrained("models/checkpoint-50080")
+tokenizer_trained = AutoTokenizer.from_pretrained(model_dir)
 model_trained = GPT2LMHeadModel.from_pretrained(model_dir, use_safetensors=True)
 model_trained.resize_token_embeddings(len(tokenizer_trained))
 

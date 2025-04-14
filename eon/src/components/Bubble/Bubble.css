@@ -18,10 +18,10 @@
   align-self: flex-start;
 }
 
-.bubble.user.dark-mode {
-  background: #172044;
+.dark-mode .bubble.user {
+  background: #121834;
 }
 
-.bubble.model.dark-mode {
-  background: #133438;
+.dark-mode .bubble.model {
+  background: #122f32;
 }

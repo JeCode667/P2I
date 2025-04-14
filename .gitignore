@@ -138,3 +138,5 @@ dist
 .sln
 
 api/models/
+
+model.safetensors

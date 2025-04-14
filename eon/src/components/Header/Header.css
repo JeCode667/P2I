@@ -21,3 +21,16 @@
   align-items: center;
   gap: 20px;
 }
+
+.header .select {
+  padding-left: 7px;
+  border-radius: 4px;
+}
+
+.header .select:hover {
+  background-color: #5eefff;
+}
+
+.dark-mode .header .select:hover {
+  background-color: #1b244e;
+}

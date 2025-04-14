@@ -2,11 +2,11 @@ import React from "react";
 import "./Chat.css";
 import Bubble from "../Bubble/Bubble";
 
-const Chat = ({ messages, darkMode }) => {
+const Chat = ({ messages }) => {
   return (
     <div className="chat-container">
       {messages.map((message, index) => (
-        <Bubble key={index} message={message} darkMode={darkMode} />
+        <Bubble key={index} message={message} />
       ))}
     </div>
   );

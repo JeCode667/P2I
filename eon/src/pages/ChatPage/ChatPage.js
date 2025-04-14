@@ -1,4 +1,3 @@
-import React from "react";
 import "./ChatPage.css";
 import { useChatbot } from "../../services/chat";
 import Chat from "../../components/Chat/Chat";
@@ -14,34 +13,30 @@ export default function ChatPage({ darkMode }) {
     messages,
     sendMessage: originalSendMessage,
   } = useChatbot(model);
-  const [hasSentMessage, setHasSentMessage] = React.useState(false);
-
-  const sendMessage = () => {
-    if (!hasSentMessage) {
-      setHasSentMessage(true);
-    }
-    originalSendMessage();
-  };
 
   return (
     <div
-      className={`App ${hasSentMessage ? "chat-active" : ""}`}
+      className={`chat ${messages.length > 0 ? "active" : ""}`}
       style={{ padding: 20 }}
     >
       <div className="Logo">
         <Logo />
       </div>
       <div className="Chat">
-        <Chat messages={messages} darkMode={darkMode} />
+        <Chat messages={messages} />
       </div>
       <div className="InputBar">
         <InputBar
           darkMode={darkMode}
           setInput={setInput}
           input={input}
-          sendMessage={sendMessage}
+          sendMessage={originalSendMessage}
         />
       </div>
+      <p className="avertissement">
+        Le modèle peut faire des erreurs. Veuillez vérifier les informations
+        importantes.
+      </p>
     </div>
   );
 }

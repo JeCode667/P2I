@@ -1,16 +1,26 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
-const API_URL = "http://127.0.0.1:5000/chat/"; // Remplace par l'URL de ton API
+const API_URL = "http://127.0.0.1:5000/chat/";
 
 export function useChatbot(model = "gpt2") {
   const [input, setInput] = useState("");
-  const [messages, setMessages] = useState([]);
+  const [messages, setMessages] = useState(() => {
+    // Récupère les messages depuis le localStorage au chargement
+    const savedMessages = localStorage.getItem("chatMessages");
+    return savedMessages ? JSON.parse(savedMessages) : [];
+  });
+
+  // Sauvegarde les messages dans le localStorage à chaque mise à jour
+  useEffect(() => {
+    localStorage.setItem("chatMessages", JSON.stringify(messages));
+  }, [messages]);
 
   const sendMessage = async () => {
     if (!input.trim()) return;
 
     const newMessages = [...messages, { text: input, sender: "user" }];
-    setMessages([...newMessages, { text: " . . . ", sender: "bot" }]); // Ajoute les points de suspension
+    // Ajoute les points de suspension pour indiquer que la réponse est en cours
+    setMessages([...newMessages, { text: " . . . ", sender: "bot" }]);
     setInput("");
 
     try {

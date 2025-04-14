@@ -36,13 +36,8 @@ function App() {
               <ChatPage darkMode={darkMode} handleDarkMode={handleDarkMode} />
             }
           />
-          <Route path="/info" element={<InfoPage />} />{" "}
-          {/* Si vous avez une page d'informations */}
+          <Route path="/info" element={<InfoPage />} />
         </Routes>
-        <p className="avertissement">
-          Le modèle peut faire des erreurs. Veuillez vérifier les informations
-          importantes.
-        </p>
       </Router>
     </ModelProvider>
   );

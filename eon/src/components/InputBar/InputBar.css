@@ -10,7 +10,7 @@
   justify-self: center;
 }
 
-.inputbar.dark-mode {
+.dark-mode .inputbar {
   background: #5d5d5d;
 }
 

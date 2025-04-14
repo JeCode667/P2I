@@ -45,7 +45,7 @@ body::before {
 
 /* Dégradé pour le mode sombre */
 body::after {
-  background-image: linear-gradient(180deg, #172044 0%, #133438 100%);
+  background: linear-gradient(180deg, #121834 0%, #122f32 100%);
   opacity: 0; /* Caché en mode clair */
 }
 

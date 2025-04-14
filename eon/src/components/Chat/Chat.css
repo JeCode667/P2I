@@ -3,6 +3,35 @@
   flex-direction: column;
   padding: 10px;
   width: 60%;
+  max-height: 55vh;
   justify-self: center;
   overflow-y: auto; /* Ajoute un défilement si nécessaire */
+}
+
+/* Styles pour la barre de défilement */
+.chat-container::-webkit-scrollbar {
+  width: 8px; /* Largeur de la barre de défilement */
+}
+
+.chat-container::-webkit-scrollbar-track {
+  background: none; /* Couleur de l'arrière-plan de la piste */
+  border-radius: 10px; /* Coins arrondis */
+}
+
+.chat-container::-webkit-scrollbar-thumb {
+  background: linear-gradient(
+    180deg,
+    #6077ed 25%,
+    #5ae4f3 75%
+  ); /* Couleur de la barre de défilement */
+  border-radius: 10px; /* Coins arrondis */
+  transition: transform 0.2s ease;
+}
+
+.dark-mode .chat-container::-webkit-scrollbar-thumb {
+  background: linear-gradient(
+    180deg,
+    #122f32 25%,
+    #121834 75%
+  ); /* Couleur de la barre de défilement en mode sombre */
 }

@@ -1,11 +1,9 @@
 import React, { createContext, useState, useContext } from "react";
 
-// Crée le contexte
 const ModelContext = createContext();
 
-// Fournisseur du contexte
 export function ModelProvider({ children }) {
-  const [model, setModel] = useState("gpt2"); // Modèle par défaut
+  const [model, setModel] = useState("rag/trained"); // Modèle par défaut
 
   return (
     <ModelContext.Provider value={{ model, setModel }}>
@@ -14,7 +12,6 @@ export function ModelProvider({ children }) {
   );
 }
 
-// Hook personnalisé pour utiliser le contexte
 export function useModel() {
   return useContext(ModelContext);
 }
